@@ -6,10 +6,6 @@
 # 'firstLineMatch': ''
 'patterns': [
 
-    {# Comment Lines
-        'name': '.comment.ahk'
-        'match': '(;)(.*)'
-        }
     {# Quoted strings
         'name': '.string'
         'match': '["].*["]'
@@ -66,5 +62,17 @@
         'captures':
             '1': 'name': '.hotkey.ahk'
         'match': '(.+::)'
+    }
+    {# Comment - Single Line
+        'name': '.comment.ahk'
+        'match': '(;)(.*)'
+        }
+    {# Comment - Multi Line
+      'begin': '/\\*'
+      'captures':
+        '0':
+          'name': 'punctuation.definition.comment.ahk'
+      'end': '\\*/'
+      'name': 'comment.block.ahk'
     }
 ]
